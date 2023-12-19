@@ -1,0 +1,41 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-memento-dev-170924-authRole",
+      "UnauthRoleArn": "arn:aws:iam::299118682923:role/amplify-memento-dev-170924-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::299118682923:role/amplify-memento-dev-170924-authRole",
+      "Region": "eu-central-1",
+      "DeploymentBucketName": "amplify-memento-dev-170924-deployment",
+      "UnauthRoleName": "amplify-memento-dev-170924-unauthRole",
+      "StackName": "amplify-memento-dev-170924",
+      "StackId": "arn:aws:cloudformation:eu-central-1:299118682923:stack/amplify-memento-dev-170924/273c6e20-9101-11ed-b4f5-025e3b5f2f26",
+      "AmplifyAppId": "deb05unoxzys8"
+    },
+    "categories": {
+      "api": {
+        "memento": {}
+      },
+      "auth": {
+        "memento498c0f19": {}
+      },
+      "storage": {
+        "s3cc96b599": {}
+      },
+      "analytics": {
+        "memento": {},
+        "Pinpoint": {
+          "Name": "memento-dev",
+          "Id": "15ccd4e17b184a98a66823b8e38541d5",
+          "Region": "eu-central-1"
+        }
+      },
+      "notifications": {
+        "Pinpoint": {
+          "Name": "memento-dev",
+          "Id": "15ccd4e17b184a98a66823b8e38541d5",
+          "Region": "eu-central-1"
+        }
+      }
+    }
+  }
+}

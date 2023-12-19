@@ -1,0 +1,14 @@
+{
+  "resourceName": "s3cc96b599",
+  "policyUUID": "cc96b599",
+  "bucketName": "mementoc511be0d379e406791a177950f80e86e",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}

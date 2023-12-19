@@ -1,0 +1,289 @@
+# this is an auto generated file. This will be overwritten
+query GetEvento($id: ID!) {
+  getEvento(id: $id) {
+    id
+    titolo
+    descrizione
+    creatore
+    agenda {
+      id
+      nome
+      descrizione
+      partecipanti
+      eventi {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    luogo
+    piattaforma
+    partecipanti
+    note
+    allegati {
+      items {
+        id
+        nome
+        tipo
+        nomeEvento
+        idEvento
+        createdAt
+        updatedAt
+        eventoAllegatiId
+      }
+      nextToken
+    }
+    dataInizio
+    dataFine
+    createdAt
+    updatedAt
+    agendaEventiId
+  }
+}
+query ListEventos(
+  $filter: ModelEventoFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listEventos(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      titolo
+      descrizione
+      creatore
+      agenda {
+        id
+        nome
+        descrizione
+        partecipanti
+        createdAt
+        updatedAt
+      }
+      luogo
+      piattaforma
+      partecipanti
+      note
+      allegati {
+        nextToken
+      }
+      dataInizio
+      dataFine
+      createdAt
+      updatedAt
+      agendaEventiId
+    }
+    nextToken
+  }
+}
+query GetAgenda($id: ID!) {
+  getAgenda(id: $id) {
+    id
+    nome
+    descrizione
+    partecipanti
+    eventi {
+      items {
+        id
+        titolo
+        descrizione
+        creatore
+        luogo
+        piattaforma
+        partecipanti
+        note
+        dataInizio
+        dataFine
+        createdAt
+        updatedAt
+        agendaEventiId
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+query ListAgenda(
+  $filter: ModelAgendaFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listAgenda(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      nome
+      descrizione
+      partecipanti
+      eventi {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetUtente($id: ID!) {
+  getUtente(id: $id) {
+    id
+    username
+    notifica
+    notifiche {
+      id
+      tipo
+      messaggio
+      destinatari
+      utente
+      accettazione
+      nomeEvento
+      idEvento
+      nomeAgenda
+      idAgenda
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+  }
+}
+query ListUtentes(
+  $filter: ModelUtenteFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listUtentes(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      username
+      notifica
+      notifiche {
+        id
+        tipo
+        messaggio
+        destinatari
+        utente
+        accettazione
+        nomeEvento
+        idEvento
+        nomeAgenda
+        idAgenda
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetFile($id: ID!) {
+  getFile(id: $id) {
+    id
+    nome
+    tipo
+    evento {
+      id
+      titolo
+      descrizione
+      creatore
+      agenda {
+        id
+        nome
+        descrizione
+        partecipanti
+        createdAt
+        updatedAt
+      }
+      luogo
+      piattaforma
+      partecipanti
+      note
+      allegati {
+        nextToken
+      }
+      dataInizio
+      dataFine
+      createdAt
+      updatedAt
+      agendaEventiId
+    }
+    nomeEvento
+    idEvento
+    createdAt
+    updatedAt
+    eventoAllegatiId
+  }
+}
+query ListFiles(
+  $filter: ModelFileFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listFiles(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      nome
+      tipo
+      evento {
+        id
+        titolo
+        descrizione
+        creatore
+        luogo
+        piattaforma
+        partecipanti
+        note
+        dataInizio
+        dataFine
+        createdAt
+        updatedAt
+        agendaEventiId
+      }
+      nomeEvento
+      idEvento
+      createdAt
+      updatedAt
+      eventoAllegatiId
+    }
+    nextToken
+  }
+}
+query GetNotifica($id: ID!) {
+  getNotifica(id: $id) {
+    id
+    tipo
+    messaggio
+    destinatari
+    utente
+    accettazione
+    nomeEvento
+    idEvento
+    nomeAgenda
+    idAgenda
+    createdAt
+    updatedAt
+  }
+}
+query ListNotificas(
+  $filter: ModelNotificaFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listNotificas(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      tipo
+      messaggio
+      destinatari
+      utente
+      accettazione
+      nomeEvento
+      idEvento
+      nomeAgenda
+      idAgenda
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}

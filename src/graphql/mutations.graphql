@@ -1,0 +1,484 @@
+# this is an auto generated file. This will be overwritten
+mutation CreateEvento(
+  $input: CreateEventoInput!
+  $condition: ModelEventoConditionInput
+) {
+  createEvento(input: $input, condition: $condition) {
+    id
+    titolo
+    descrizione
+    creatore
+    agenda {
+      id
+      nome
+      descrizione
+      partecipanti
+      eventi {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    luogo
+    piattaforma
+    partecipanti
+    note
+    allegati {
+      items {
+        id
+        nome
+        tipo
+        nomeEvento
+        idEvento
+        createdAt
+        updatedAt
+        eventoAllegatiId
+      }
+      nextToken
+    }
+    dataInizio
+    dataFine
+    createdAt
+    updatedAt
+    agendaEventiId
+  }
+}
+mutation UpdateEvento(
+  $input: UpdateEventoInput!
+  $condition: ModelEventoConditionInput
+) {
+  updateEvento(input: $input, condition: $condition) {
+    id
+    titolo
+    descrizione
+    creatore
+    agenda {
+      id
+      nome
+      descrizione
+      partecipanti
+      eventi {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    luogo
+    piattaforma
+    partecipanti
+    note
+    allegati {
+      items {
+        id
+        nome
+        tipo
+        nomeEvento
+        idEvento
+        createdAt
+        updatedAt
+        eventoAllegatiId
+      }
+      nextToken
+    }
+    dataInizio
+    dataFine
+    createdAt
+    updatedAt
+    agendaEventiId
+  }
+}
+mutation DeleteEvento(
+  $input: DeleteEventoInput!
+  $condition: ModelEventoConditionInput
+) {
+  deleteEvento(input: $input, condition: $condition) {
+    id
+    titolo
+    descrizione
+    creatore
+    agenda {
+      id
+      nome
+      descrizione
+      partecipanti
+      eventi {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    luogo
+    piattaforma
+    partecipanti
+    note
+    allegati {
+      items {
+        id
+        nome
+        tipo
+        nomeEvento
+        idEvento
+        createdAt
+        updatedAt
+        eventoAllegatiId
+      }
+      nextToken
+    }
+    dataInizio
+    dataFine
+    createdAt
+    updatedAt
+    agendaEventiId
+  }
+}
+mutation CreateAgenda(
+  $input: CreateAgendaInput!
+  $condition: ModelAgendaConditionInput
+) {
+  createAgenda(input: $input, condition: $condition) {
+    id
+    nome
+    descrizione
+    partecipanti
+    eventi {
+      items {
+        id
+        titolo
+        descrizione
+        creatore
+        luogo
+        piattaforma
+        partecipanti
+        note
+        dataInizio
+        dataFine
+        createdAt
+        updatedAt
+        agendaEventiId
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateAgenda(
+  $input: UpdateAgendaInput!
+  $condition: ModelAgendaConditionInput
+) {
+  updateAgenda(input: $input, condition: $condition) {
+    id
+    nome
+    descrizione
+    partecipanti
+    eventi {
+      items {
+        id
+        titolo
+        descrizione
+        creatore
+        luogo
+        piattaforma
+        partecipanti
+        note
+        dataInizio
+        dataFine
+        createdAt
+        updatedAt
+        agendaEventiId
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteAgenda(
+  $input: DeleteAgendaInput!
+  $condition: ModelAgendaConditionInput
+) {
+  deleteAgenda(input: $input, condition: $condition) {
+    id
+    nome
+    descrizione
+    partecipanti
+    eventi {
+      items {
+        id
+        titolo
+        descrizione
+        creatore
+        luogo
+        piattaforma
+        partecipanti
+        note
+        dataInizio
+        dataFine
+        createdAt
+        updatedAt
+        agendaEventiId
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateUtente(
+  $input: CreateUtenteInput!
+  $condition: ModelUtenteConditionInput
+) {
+  createUtente(input: $input, condition: $condition) {
+    id
+    username
+    notifica
+    notifiche {
+      id
+      tipo
+      messaggio
+      destinatari
+      utente
+      accettazione
+      nomeEvento
+      idEvento
+      nomeAgenda
+      idAgenda
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateUtente(
+  $input: UpdateUtenteInput!
+  $condition: ModelUtenteConditionInput
+) {
+  updateUtente(input: $input, condition: $condition) {
+    id
+    username
+    notifica
+    notifiche {
+      id
+      tipo
+      messaggio
+      destinatari
+      utente
+      accettazione
+      nomeEvento
+      idEvento
+      nomeAgenda
+      idAgenda
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteUtente(
+  $input: DeleteUtenteInput!
+  $condition: ModelUtenteConditionInput
+) {
+  deleteUtente(input: $input, condition: $condition) {
+    id
+    username
+    notifica
+    notifiche {
+      id
+      tipo
+      messaggio
+      destinatari
+      utente
+      accettazione
+      nomeEvento
+      idEvento
+      nomeAgenda
+      idAgenda
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateFile(
+  $input: CreateFileInput!
+  $condition: ModelFileConditionInput
+) {
+  createFile(input: $input, condition: $condition) {
+    id
+    nome
+    tipo
+    evento {
+      id
+      titolo
+      descrizione
+      creatore
+      agenda {
+        id
+        nome
+        descrizione
+        partecipanti
+        createdAt
+        updatedAt
+      }
+      luogo
+      piattaforma
+      partecipanti
+      note
+      allegati {
+        nextToken
+      }
+      dataInizio
+      dataFine
+      createdAt
+      updatedAt
+      agendaEventiId
+    }
+    nomeEvento
+    idEvento
+    createdAt
+    updatedAt
+    eventoAllegatiId
+  }
+}
+mutation UpdateFile(
+  $input: UpdateFileInput!
+  $condition: ModelFileConditionInput
+) {
+  updateFile(input: $input, condition: $condition) {
+    id
+    nome
+    tipo
+    evento {
+      id
+      titolo
+      descrizione
+      creatore
+      agenda {
+        id
+        nome
+        descrizione
+        partecipanti
+        createdAt
+        updatedAt
+      }
+      luogo
+      piattaforma
+      partecipanti
+      note
+      allegati {
+        nextToken
+      }
+      dataInizio
+      dataFine
+      createdAt
+      updatedAt
+      agendaEventiId
+    }
+    nomeEvento
+    idEvento
+    createdAt
+    updatedAt
+    eventoAllegatiId
+  }
+}
+mutation DeleteFile(
+  $input: DeleteFileInput!
+  $condition: ModelFileConditionInput
+) {
+  deleteFile(input: $input, condition: $condition) {
+    id
+    nome
+    tipo
+    evento {
+      id
+      titolo
+      descrizione
+      creatore
+      agenda {
+        id
+        nome
+        descrizione
+        partecipanti
+        createdAt
+        updatedAt
+      }
+      luogo
+      piattaforma
+      partecipanti
+      note
+      allegati {
+        nextToken
+      }
+      dataInizio
+      dataFine
+      createdAt
+      updatedAt
+      agendaEventiId
+    }
+    nomeEvento
+    idEvento
+    createdAt
+    updatedAt
+    eventoAllegatiId
+  }
+}
+mutation CreateNotifica(
+  $input: CreateNotificaInput!
+  $condition: ModelNotificaConditionInput
+) {
+  createNotifica(input: $input, condition: $condition) {
+    id
+    tipo
+    messaggio
+    destinatari
+    utente
+    accettazione
+    nomeEvento
+    idEvento
+    nomeAgenda
+    idAgenda
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateNotifica(
+  $input: UpdateNotificaInput!
+  $condition: ModelNotificaConditionInput
+) {
+  updateNotifica(input: $input, condition: $condition) {
+    id
+    tipo
+    messaggio
+    destinatari
+    utente
+    accettazione
+    nomeEvento
+    idEvento
+    nomeAgenda
+    idAgenda
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteNotifica(
+  $input: DeleteNotificaInput!
+  $condition: ModelNotificaConditionInput
+) {
+  deleteNotifica(input: $input, condition: $condition) {
+    id
+    tipo
+    messaggio
+    destinatari
+    utente
+    accettazione
+    nomeEvento
+    idEvento
+    nomeAgenda
+    idAgenda
+    createdAt
+    updatedAt
+  }
+}

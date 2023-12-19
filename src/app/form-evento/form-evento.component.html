@@ -1,0 +1,212 @@
+<app-header></app-header>
+<body>
+  <div class="demo-app ">
+
+    <div class='demo-app-sidebar-section'>
+      <!--<app-toolbar></app-toolbar>
+      <mat-nav-list>
+        <button mat-button color="primary" routerLink = "/autenticazione/homepage" >
+          <mat-icon>homepage</mat-icon>
+          &nbsp; Torna indietro
+        </button>
+      </mat-nav-list>
+    <br>-->
+    <mat-nav-list>
+      <button mat-button (click)= "accordion.openAll()" color="primary"> <mat-icon>expand_more</mat-icon> Espandi tutto</button>
+      </mat-nav-list>
+      <mat-nav-list>
+      <button mat-button (click)= "accordion.closeAll()" color="primary"> <mat-icon>expand_less</mat-icon> Riduci tutto </button>
+      </mat-nav-list>
+      <mat-nav-list>
+        <button mat-button (click)= 'onClick2()' color="accent"> <mat-icon>arrow_back</mat-icon> Torna indietro </button>
+        </mat-nav-list>
+    </div>
+
+    <div class="demo-app-main" >
+      <br>
+      <h2> <b>  &nbsp; {{title}} </b> </h2>
+      <br>
+
+      <mat-accordion class="example-headers-align" multi>
+        <div >
+          <form autocomplete="off" [formGroup]= "createForm" (ngSubmit)= "onCreate(createForm.value)">
+
+            <!--Evento e agenda-->
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title >
+                  Evento o Promemoria
+                </mat-panel-title>
+                <mat-panel-description>
+                  Titolo e descrizione evento
+                  <mat-icon>schedule</mat-icon>
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+
+              <div fxLayout="row" >
+                <mat-form-field appearance="fill" fxFlex>
+                  <mat-label>Titolo</mat-label>
+                  <input matInput type="text" formControlName="titolo" autocomplete="off" required>
+                </mat-form-field>
+                <mat-form-field appearance="fill" fxFlex="0 0 auto" style="margin-left: 16px">
+                  <mat-label>Descrizione</mat-label>
+                  <input matInput type="text" formControlName="descrizione" autocomplete="off">
+                </mat-form-field>
+                  <!--<mat-form-field appearance="fill" fxFlex="0 0 auto" style="margin-left: 16px">
+                    <mat-label>Agenda</mat-label>
+                    <input matInput type="text" formControlName="agendaEventiId" autocomplete="off" required>-->
+                   <!--<input matInput type="text" formControlName="agenda" aria-label="Number" [formControl]= "myControl" [matAutocomplete]= "auto" required>
+                    <mat-autocomplete #auto="matAutocomplete">
+                      <mat-option *ngFor= "let option of options" [value]= "option">
+                        {{option}}
+                      </mat-option>
+                    </mat-autocomplete>
+                  </mat-form-field>-->
+              </div>
+            </mat-expansion-panel>
+
+            <!--Luogo-->
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title> Luogo </mat-panel-title>
+                <mat-panel-description>Luogo o piattaforma <mat-icon>map</mat-icon> </mat-panel-description>
+              </mat-expansion-panel-header>
+
+              <div fxLayout="row">
+                <mat-form-field appearance="fill" fxFlex>
+                  <mat-label>Luogo</mat-label>
+                  <input matInput type="text" formControlName="luogo" autocomplete="off">
+                </mat-form-field>
+                <mat-form-field appearance="fill" fxFlex="0 0 auto" style="margin-left: 16px">
+                  <mat-label>Link piattaforma</mat-label>
+                  <input matInput type="text" formControlName="piattaforma" autocomplete="off">
+                </mat-form-field>
+              </div>
+            </mat-expansion-panel>
+
+            <!--Partecipanti-->
+            <mat-expansion-panel >
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Partecipanti
+                </mat-panel-title>
+                <mat-panel-description>
+                  Lista partecipanti
+                  <mat-icon>perm_contact_calendar</mat-icon>
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+
+
+              <mat-form-field class="example-chip-list" appearance="fill">
+                <mat-chip-list #chipList aria-label="Enter fruits">
+                  <mat-chip *ngFor= "let contatto of contatti" (removed)= "remove(contatto)">
+                    {{contatto}}
+                    <button matChipRemove [attr.aria-label]= "'remove ' + contatto">
+                      <mat-icon>cancel</mat-icon>
+                    </button>
+                  </mat-chip>
+                  <input placeholder="Aggiungi partecipante..."
+                        formControlName="partecipanti"
+                        required
+                        [matChipInputFor]= "chipList"
+                        [matChipInputSeparatorKeyCodes]= "separatorKeysCodes"
+                        [matChipInputAddOnBlur]= "addOnBlur"
+                        (matChipInputTokenEnd)= "add($event)">
+                </mat-chip-list>
+              </mat-form-field>
+
+
+            </mat-expansion-panel>
+
+            <!--Note-->
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Note
+                </mat-panel-title>
+                <mat-panel-description>
+                  Inserisci note
+                  <mat-icon>note</mat-icon>
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+
+              <mat-form-field appearance="fill">
+                <mat-label>Note</mat-label>
+                <input matInput type="text" formControlName="note" autocomplete="off">
+                <textarea matInput></textarea>
+              </mat-form-field>
+            </mat-expansion-panel>
+
+            <!--Allegati-->
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Allegati
+                </mat-panel-title>
+                <mat-panel-description>
+                  Inserisci allegati
+                  <mat-icon>attachment</mat-icon>
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+
+              <form>
+                <input type="file" (change)= "onFileSelected($event)" multiple>
+                <!--<button (click)= "onUpload()">Upload</button>-->
+              </form>
+
+              <br>
+              <mat-panel-title>File caricati:</mat-panel-title>
+              <div *ngFor="let fileName of fileNames">
+                <br>
+                {{ fileName }}
+              </div>
+
+             <!-- <mat-form-field appearance="fill">
+                <mat-label>Allegati</mat-label>
+                <input matInput>
+              </mat-form-field>-->
+            </mat-expansion-panel>
+
+            <!--Data-->
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Data
+                </mat-panel-title>
+                <mat-panel-description>
+                  Inserisci data e ora
+                  <mat-icon>date_range</mat-icon>
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+
+              <div fxLayout="row">
+                <mat-form-field appearance="fill" fxFlex>
+                  <mat-label>Data inizio</mat-label>
+                  <input matInput [matDatepicker]= "picker" (focus)= "picker.open()" formControlName="dataInizio" >
+                </mat-form-field>
+                <mat-datepicker #picker></mat-datepicker>
+
+                <mat-form-field appearance="fill" fxFlex="0 0 auto" style="margin-left: 16px">
+                  <mat-label>Data fine</mat-label>
+                  <input matInput [matDatepicker]= "picker2" (focus)= "picker2.open()" formControlName="dataFine" >
+                </mat-form-field>
+                <mat-datepicker #picker2></mat-datepicker>
+
+              </div>
+
+              <mat-action-row>
+                <!--<button mat-button color="warn" (click)="openDialog()" >Salva</button>-->
+                <button mat-raised-button color="warn" type="submit">Salva e condividi</button>
+                <button mat-raised-button color="accent" (click) = 'onClick2()'>Annulla</button>
+              </mat-action-row>
+
+            </mat-expansion-panel>
+
+          </form>
+        </div>
+      </mat-accordion>
+    </div>
+  </div>
+</body>
+
+

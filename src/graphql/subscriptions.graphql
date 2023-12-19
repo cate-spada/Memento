@@ -1,0 +1,439 @@
+# this is an auto generated file. This will be overwritten
+subscription OnCreateEvento($filter: ModelSubscriptionEventoFilterInput) {
+  onCreateEvento(filter: $filter) {
+    id
+    titolo
+    descrizione
+    creatore
+    agenda {
+      id
+      nome
+      descrizione
+      partecipanti
+      eventi {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    luogo
+    piattaforma
+    partecipanti
+    note
+    allegati {
+      items {
+        id
+        nome
+        tipo
+        nomeEvento
+        idEvento
+        createdAt
+        updatedAt
+        eventoAllegatiId
+      }
+      nextToken
+    }
+    dataInizio
+    dataFine
+    createdAt
+    updatedAt
+    agendaEventiId
+  }
+}
+subscription OnUpdateEvento($filter: ModelSubscriptionEventoFilterInput) {
+  onUpdateEvento(filter: $filter) {
+    id
+    titolo
+    descrizione
+    creatore
+    agenda {
+      id
+      nome
+      descrizione
+      partecipanti
+      eventi {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    luogo
+    piattaforma
+    partecipanti
+    note
+    allegati {
+      items {
+        id
+        nome
+        tipo
+        nomeEvento
+        idEvento
+        createdAt
+        updatedAt
+        eventoAllegatiId
+      }
+      nextToken
+    }
+    dataInizio
+    dataFine
+    createdAt
+    updatedAt
+    agendaEventiId
+  }
+}
+subscription OnDeleteEvento($filter: ModelSubscriptionEventoFilterInput) {
+  onDeleteEvento(filter: $filter) {
+    id
+    titolo
+    descrizione
+    creatore
+    agenda {
+      id
+      nome
+      descrizione
+      partecipanti
+      eventi {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    luogo
+    piattaforma
+    partecipanti
+    note
+    allegati {
+      items {
+        id
+        nome
+        tipo
+        nomeEvento
+        idEvento
+        createdAt
+        updatedAt
+        eventoAllegatiId
+      }
+      nextToken
+    }
+    dataInizio
+    dataFine
+    createdAt
+    updatedAt
+    agendaEventiId
+  }
+}
+subscription OnCreateAgenda($filter: ModelSubscriptionAgendaFilterInput) {
+  onCreateAgenda(filter: $filter) {
+    id
+    nome
+    descrizione
+    partecipanti
+    eventi {
+      items {
+        id
+        titolo
+        descrizione
+        creatore
+        luogo
+        piattaforma
+        partecipanti
+        note
+        dataInizio
+        dataFine
+        createdAt
+        updatedAt
+        agendaEventiId
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateAgenda($filter: ModelSubscriptionAgendaFilterInput) {
+  onUpdateAgenda(filter: $filter) {
+    id
+    nome
+    descrizione
+    partecipanti
+    eventi {
+      items {
+        id
+        titolo
+        descrizione
+        creatore
+        luogo
+        piattaforma
+        partecipanti
+        note
+        dataInizio
+        dataFine
+        createdAt
+        updatedAt
+        agendaEventiId
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteAgenda($filter: ModelSubscriptionAgendaFilterInput) {
+  onDeleteAgenda(filter: $filter) {
+    id
+    nome
+    descrizione
+    partecipanti
+    eventi {
+      items {
+        id
+        titolo
+        descrizione
+        creatore
+        luogo
+        piattaforma
+        partecipanti
+        note
+        dataInizio
+        dataFine
+        createdAt
+        updatedAt
+        agendaEventiId
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateUtente($filter: ModelSubscriptionUtenteFilterInput) {
+  onCreateUtente(filter: $filter) {
+    id
+    username
+    notifica
+    notifiche {
+      id
+      tipo
+      messaggio
+      destinatari
+      utente
+      accettazione
+      nomeEvento
+      idEvento
+      nomeAgenda
+      idAgenda
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateUtente($filter: ModelSubscriptionUtenteFilterInput) {
+  onUpdateUtente(filter: $filter) {
+    id
+    username
+    notifica
+    notifiche {
+      id
+      tipo
+      messaggio
+      destinatari
+      utente
+      accettazione
+      nomeEvento
+      idEvento
+      nomeAgenda
+      idAgenda
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteUtente($filter: ModelSubscriptionUtenteFilterInput) {
+  onDeleteUtente(filter: $filter) {
+    id
+    username
+    notifica
+    notifiche {
+      id
+      tipo
+      messaggio
+      destinatari
+      utente
+      accettazione
+      nomeEvento
+      idEvento
+      nomeAgenda
+      idAgenda
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateFile($filter: ModelSubscriptionFileFilterInput) {
+  onCreateFile(filter: $filter) {
+    id
+    nome
+    tipo
+    evento {
+      id
+      titolo
+      descrizione
+      creatore
+      agenda {
+        id
+        nome
+        descrizione
+        partecipanti
+        createdAt
+        updatedAt
+      }
+      luogo
+      piattaforma
+      partecipanti
+      note
+      allegati {
+        nextToken
+      }
+      dataInizio
+      dataFine
+      createdAt
+      updatedAt
+      agendaEventiId
+    }
+    nomeEvento
+    idEvento
+    createdAt
+    updatedAt
+    eventoAllegatiId
+  }
+}
+subscription OnUpdateFile($filter: ModelSubscriptionFileFilterInput) {
+  onUpdateFile(filter: $filter) {
+    id
+    nome
+    tipo
+    evento {
+      id
+      titolo
+      descrizione
+      creatore
+      agenda {
+        id
+        nome
+        descrizione
+        partecipanti
+        createdAt
+        updatedAt
+      }
+      luogo
+      piattaforma
+      partecipanti
+      note
+      allegati {
+        nextToken
+      }
+      dataInizio
+      dataFine
+      createdAt
+      updatedAt
+      agendaEventiId
+    }
+    nomeEvento
+    idEvento
+    createdAt
+    updatedAt
+    eventoAllegatiId
+  }
+}
+subscription OnDeleteFile($filter: ModelSubscriptionFileFilterInput) {
+  onDeleteFile(filter: $filter) {
+    id
+    nome
+    tipo
+    evento {
+      id
+      titolo
+      descrizione
+      creatore
+      agenda {
+        id
+        nome
+        descrizione
+        partecipanti
+        createdAt
+        updatedAt
+      }
+      luogo
+      piattaforma
+      partecipanti
+      note
+      allegati {
+        nextToken
+      }
+      dataInizio
+      dataFine
+      createdAt
+      updatedAt
+      agendaEventiId
+    }
+    nomeEvento
+    idEvento
+    createdAt
+    updatedAt
+    eventoAllegatiId
+  }
+}
+subscription OnCreateNotifica($filter: ModelSubscriptionNotificaFilterInput) {
+  onCreateNotifica(filter: $filter) {
+    id
+    tipo
+    messaggio
+    destinatari
+    utente
+    accettazione
+    nomeEvento
+    idEvento
+    nomeAgenda
+    idAgenda
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateNotifica($filter: ModelSubscriptionNotificaFilterInput) {
+  onUpdateNotifica(filter: $filter) {
+    id
+    tipo
+    messaggio
+    destinatari
+    utente
+    accettazione
+    nomeEvento
+    idEvento
+    nomeAgenda
+    idAgenda
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteNotifica($filter: ModelSubscriptionNotificaFilterInput) {
+  onDeleteNotifica(filter: $filter) {
+    id
+    tipo
+    messaggio
+    destinatari
+    utente
+    accettazione
+    nomeEvento
+    idEvento
+    nomeAgenda
+    idAgenda
+    createdAt
+    updatedAt
+  }
+}

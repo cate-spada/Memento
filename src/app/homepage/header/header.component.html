@@ -1,0 +1,28 @@
+<mat-toolbar color = "primary">
+  <img
+    width="40"
+    alt="Logo"
+    src="https://st.depositphotos.com/1507819/1295/v/600/depositphotos_12953026-stock-illustration-light-bulb-icon.jpg"
+  />
+  &nbsp;
+  <span>Memento</span>
+
+  <span class="example-spacer"></span>
+
+  <button
+   mat-icon-button
+   routerLink = "/autenticazione/homepage"
+   class="example-icon"
+   aria-label="Example icon-button with share icon">
+    <mat-icon>homepage</mat-icon>
+  </button>
+
+  <button
+    mat-icon-button
+    (click)= "authenticator.signOut()"
+    class="example-icon"
+    aria-label="Example icon-button with share icon">
+    <mat-icon>logout</mat-icon>
+ </button>
+
+</mat-toolbar>

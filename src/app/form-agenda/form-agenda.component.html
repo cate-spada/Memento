@@ -1,0 +1,101 @@
+<app-header></app-header>
+<body>
+  <div class="demo-app ">
+
+    <div class='demo-app-sidebar-section'>
+      <mat-nav-list>
+      <button mat-button (click)="accordion.openAll()" color="primary"> <mat-icon>expand_more</mat-icon> Espandi tutto</button>
+      </mat-nav-list>
+      <mat-nav-list>
+      <button mat-button (click)="accordion.closeAll()" color="primary"> <mat-icon>expand_less</mat-icon> Riduci tutto </button>
+      </mat-nav-list>
+      <mat-nav-list>
+        <button mat-button color="accent" routerLink = "/autenticazione/homepage"> <mat-icon>arrow_back</mat-icon> Torna indietro </button>
+      </mat-nav-list>
+    </div>
+
+    <div class="demo-app-main" >
+    <br>
+    <h2> <b>  &nbsp; Crea nuova agenda </b> </h2>
+    <br>
+
+      <mat-accordion class="example-headers-align" multi>
+        <div>
+          <form autocomplete="off" [formGroup]= "createForm" (ngSubmit)= "onCreate(createForm.value)" >
+
+            <!--Agenda-->
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Agenda
+                </mat-panel-title>
+                <mat-panel-description>
+                  Titolo dell'agenda condivisa
+                  <mat-icon>calendar_today</mat-icon>
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <mat-form-field appearance="fill">
+                <mat-label>Titolo</mat-label>
+                <input matInput type="text" formControlName="nome" autocomplete="off" required>
+              </mat-form-field>
+            </mat-expansion-panel>
+
+            <!--Descrizione-->
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Descrizione
+                </mat-panel-title>
+                <mat-panel-description>
+                  Descrizione dell'agenda
+                  <mat-icon>description</mat-icon>
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <mat-form-field appearance="fill">
+                <mat-label>Descrizione</mat-label>
+                <input matInput type="text" formControlName="descrizione" autocomplete="off">
+              </mat-form-field>
+            </mat-expansion-panel>
+
+            <!--Partecipanti-->
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Utenti
+                </mat-panel-title>
+                <mat-panel-description>
+                  Lista utenti
+                  <mat-icon>perm_contact_calendar</mat-icon>
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+
+              <mat-form-field class="example-chip-list" appearance="fill">
+                <mat-chip-list #chipList aria-label="Enter fruits">
+                  <mat-chip *ngFor= "let contatto of contatti" (removed)= "remove(contatto)">
+                    {{contatto}}
+                    <button matChipRemove [attr.aria-label]= "'remove ' + contatto">
+                      <mat-icon>cancel</mat-icon>
+                    </button>
+                  </mat-chip>
+                  <input placeholder="Aggiungi utente..."
+                        formControlName="partecipanti"
+                        required
+                        [matChipInputFor]= "chipList"
+                        [matChipInputSeparatorKeyCodes]= "separatorKeysCodes"
+                        [matChipInputAddOnBlur]= "addOnBlur"
+                        (matChipInputTokenEnd)= "add($event)">
+                </mat-chip-list>
+              </mat-form-field>
+
+              <mat-action-row>
+                <button mat-raised-button color="warn" type="submit">Salva</button>
+                <button mat-raised-button color="accent" routerLink = "/autenticazione/homepage">Annulla</button>
+              </mat-action-row>
+
+            </mat-expansion-panel>
+          </form>
+        </div>
+      </mat-accordion>
+  </div>
+  </div>
+</body>

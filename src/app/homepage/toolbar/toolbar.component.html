@@ -1,0 +1,24 @@
+
+<h3> &nbsp; Ciao {{user.username}}!</h3>
+
+
+<mat-card class="demo-inline-calendar-card"  >
+    <mat-calendar [(selected)]="selectedDate" > </mat-calendar>
+</mat-card>
+<br>
+
+<mat-nav-list>
+  <button mat-button color="primary" routerLink = "/notifiche">
+   <mat-icon>schedule</mat-icon>
+   &nbsp; Sezione notifiche
+ </button>
+</mat-nav-list>
+
+
+<mat-nav-list>
+ <button mat-button color="primary" routerLink = "/form-agenda" >
+   <mat-icon>calendar_today</mat-icon>
+   &nbsp; Nuova agenda condivisa
+ </button>
+</mat-nav-list>
+

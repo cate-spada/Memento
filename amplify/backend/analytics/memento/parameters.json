@@ -1,0 +1,21 @@
+{
+  "appName": "memento",
+  "roleName": "pinpointLambdaRole2bc1e898",
+  "cloudformationPolicyName": "cloudformationPolicy2bc1e898",
+  "cloudWatchPolicyName": "cloudWatchPolicy2bc1e898",
+  "pinpointPolicyName": "pinpointPolicy2bc1e898",
+  "authPolicyName": "pinpoint_amplify_2bc1e898",
+  "unauthPolicyName": "pinpoint_amplify_2bc1e898",
+  "authRoleName": {
+    "Ref": "AuthRoleName"
+  },
+  "unauthRoleName": {
+    "Ref": "UnauthRoleName"
+  },
+  "authRoleArn": {
+    "Fn::GetAtt": [
+      "AuthRole",
+      "Arn"
+    ]
+  }
+}

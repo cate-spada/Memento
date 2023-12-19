@@ -1,0 +1,42 @@
+<amplify-authenticator>
+  [signUpAttributes]="[
+    'address',
+    'birthdate',
+    'email',
+    'family_name',
+    'name',
+    'phone_number',
+    'zoneinfo', ]"
+  [socialProviders]="['facebook', 'google']"
+  [formFields]="formFields" >
+
+  <ng-template amplifySlot="header">
+    <div style="padding: var(--amplify-space-large); text-align: center">
+      <img
+        width="120"
+        alt="Logo"
+        src="https://st.depositphotos.com/1507819/1295/v/600/depositphotos_12953026-stock-illustration-light-bulb-icon.jpg"
+      />
+      <div><b>Memento</b> </div>
+    </div>
+  </ng-template>
+
+  <ng-template
+    amplifySlot="authenticated"
+    let-user="user"
+    let-signOut="signOut">
+    <ng-container *ngIf="authenticator.authStatus === 'authenticated'">
+      <app-homepage></app-homepage>
+    </ng-container>
+  </ng-template>
+</amplify-authenticator>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+

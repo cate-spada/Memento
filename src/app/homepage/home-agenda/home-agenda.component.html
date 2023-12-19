@@ -1,0 +1,16 @@
+<mat-selection-list [multiple]="false">
+  <div mat-subheader>Agende condivise</div>
+
+    <div *ngFor="let agenda of agende">
+     <!-- <div *ngIf="agenda.partecipanti.includes(user)">-->
+        <mat-list-option  (click) = 'onSubmit(agenda.id)' >
+        <mat-icon mat-list-icon>calendar_today</mat-icon>
+        <div mat-line>Titolo: {{agenda.nome}}</div>
+        <div mat-line>Descrizione: {{agenda?.descrizione}}</div>
+        <div mat-line>Partecipanti: {{agenda.partecipanti }} </div>
+         </mat-list-option>
+      </div>
+    <!--</div>-->
+
+</mat-selection-list>
+

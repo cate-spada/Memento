@@ -1,0 +1,67 @@
+# This "input" configures a global authorization rule to enable public access to
+# all models in this schema. Learn more about authorization rules here: https://docs.amplify.aws/cli/graphql/authorization-rules
+input AMPLIFY { globalAuthRule: AuthRule = { allow: public } } # FOR TESTING ONLY!
+
+type Evento @model {
+  id: ID!
+  titolo: String!
+  descrizione: String
+  creatore: String
+  agenda: Agenda!  @belongsTo
+  luogo: String
+  piattaforma: String
+  partecipanti: [String]
+  note: String
+  allegati: [File] @hasMany
+  dataInizio: String!
+  dataFine: String!
+}
+
+type Agenda @model{
+  id: ID!
+  nome: String!
+  descrizione: String
+  partecipanti: [String]!
+  eventi: [Evento] @hasMany
+}
+
+type Utente @model{
+  id: ID!
+  username: String!
+  notifica: Boolean!
+  notifiche: [Notifica]
+}
+
+type File @model{
+  id: ID!
+  nome: String!
+  tipo: String!
+  evento: Evento! @belongsTo
+  nomeEvento: String
+  idEvento: String
+}
+
+enum tipoNotifica{
+  CREAZIONEEVENTO
+  MODIFICAEVENTO
+  CANCELLAZIONEEVENTO
+  CREAZIONEAGENDA
+}
+
+enum tipoOggetto{
+  EVENTO
+  AGENDA
+}
+
+type Notifica @model{
+  id: ID!
+  tipo: tipoNotifica!
+  messaggio: String!
+  destinatari: [String]!
+  utente: String!
+  accettazione: [String]
+  nomeEvento: String
+  idEvento: String
+  nomeAgenda: String
+  idAgenda: String
+}

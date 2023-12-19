@@ -1,0 +1,62 @@
+<app-header></app-header>
+
+
+<div class='demo-app'>
+
+  <div class='demo-app-sidebar'>
+    <div class='demo-app-sidebar-section'>
+      <label>
+        <input
+          type='checkbox'
+          [checked]= 'calendarOptions.weekends'
+          (change)= 'handleWeekendsToggle()'
+        />
+        Mostra weekend
+      </label>
+    </div>
+    <div class='demo-app-sidebar-section'>
+      <h2>Eventi ({{currentEvents.length}})</h2>
+      <ul>
+        <div *ngFor='let e of eventi'>
+          <li>
+            <b>{{ e.titolo }}</b>
+             <div *ngIf="e.descrizione"> Descrizione: {{ e.descrizione}}</div>
+             <div *ngIf="e.luogo"> Luogo: {{e.luogo}}</div>
+             <div *ngIf="e.piattaforma"> Piattaforma: {{ e.piattaforma}} </div>
+             <div *ngIf="e.creatore"> Creatore: {{ e.creatore}} </div>
+             <div *ngIf="e.partecipanti and e.partecipanti != e.agenda.partecipanti"> Partecipanti: {{ e.partecipanti}} </div>
+             <div *ngIf="e.agenda.partecipanti == null"> Partecipanti: {{ e.agenda.partecipanti}} </div>
+             <div *ngIf="e.note"> Note: {{ e.note}} </div>
+             <div *ngIf="e.dataInizio">Data Inizio: {{ e.dataInizio.slice(0,10)}} </div>
+             <div *ngIf="e.dataFine">Data Fine: {{ e.dataFine.slice(0,10)}} </div>
+             <div *ngIf="allegatiEvento!=null"> Allegati: {{allegati}}</div>
+          </li>
+        </div>
+      </ul>
+    </div>
+
+ <!--   <div class='demo-app-sidebar-section'>
+      <h2>Allegati eventi </h2>
+      <ul>
+        <div *ngFor='let a of allegati'>
+          <li>
+            <button mat-button (click) = "download(a.nome)" download>{{ a.nome }} ({{a.nomeEvento}})</button>
+          </li>
+        </div>
+      </ul>
+    </div>-->
+  </div>
+  <div class='demo-app-main'>
+    <full-calendar *ngIf= 'calendarVisible' [options]= 'calendarOptions'>
+      <ng-template #eventContent let-arg>
+          <b>{{ arg.timeText }}</b>
+          <i>{{ arg.event.title }}</i>
+      </ng-template>
+    </full-calendar>
+  </div>
+
+</div>
+
+
+
+
